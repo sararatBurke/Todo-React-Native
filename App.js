@@ -13,6 +13,12 @@ export default function App() {
     {id: '6', task: 'Eating'}
   ]);
 
+  const pressHandler = (id) => {
+    setTodos((prevTodos)=> {
+      return prevTodos.filter( todo => todo.id != id);
+    })
+  }
+
 
   return (
     <View style={styles.container}>
@@ -23,7 +29,7 @@ export default function App() {
           <FlatList 
             data={todos}
             renderItem={({item}) => (
-              <TodoItem item={item}/>
+              <TodoItem item={item} pressHandler={pressHandler}/>
             )}
           />
         </View>
