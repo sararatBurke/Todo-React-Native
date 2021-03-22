@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Button, FlatList, StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import Header from './components/header'
 
 export default function App() {
   const [todos, setTodos] = useState([
@@ -13,14 +14,14 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      {/* Header */}
+      <Header />
       <View style={styles.content}>
         {/* Todo form */}
         <View style={styles.list}>
           <FlatList 
             data={todos}
             renderItem={({item}) => (
-              <Text>Hello</Text>
+              <Text style={styles.item}>{item.task}</Text>
             )}
           />
         </View>
@@ -41,11 +42,19 @@ const styles = StyleSheet.create({
   },
 
   content:{
-
+    padding:40,
+    
   },
 
   list:{
+    marginTop: 20,
 
+  },
+
+  item:{
+    padding:30,
+    backgroundColor: '#569',
+    marginTop: 10,
   },
 
 });
