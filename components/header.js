@@ -8,8 +8,6 @@ export default function Header() {
         <Text style={styles.title}>Todo App</Text>
     </View>
     )
-    
-
 }
 
 const styles = StyleSheet.create({
@@ -21,6 +19,7 @@ const styles = StyleSheet.create({
     },
 
     title:{
+        color: '#fff',
         fontSize: 30,
         fontWeight: 'bold',
     },

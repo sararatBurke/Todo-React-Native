@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Button, FlatList, StyleSheet, Text, View, TouchableOpacity } from 'react-native';
-import Header from './components/header'
+import Header from './components/header';
+import TodoItem from './components/todoItem';
 
 export default function App() {
   const [todos, setTodos] = useState([
@@ -12,6 +13,7 @@ export default function App() {
     {id: '6', task: 'Eating'}
   ]);
 
+
   return (
     <View style={styles.container}>
       <Header />
@@ -21,7 +23,7 @@ export default function App() {
           <FlatList 
             data={todos}
             renderItem={({item}) => (
-              <Text style={styles.item}>{item.task}</Text>
+              <TodoItem item={item}/>
             )}
           />
         </View>
@@ -37,8 +39,6 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
     justifyContent: 'center',
-    marginLeft: 20,
-    marginTop: 50,
   },
 
   content:{
@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
   },
 
   list:{
-    marginTop: 20,
+    marginTop: 10,
 
   },
 
