@@ -1,11 +1,16 @@
 import React from 'react';
-import { StyleSheet, Text, TouchableOpacity} from 'react-native';
+import { Button, StyleSheet, Text, TouchableOpacity} from 'react-native';
 
 
-export default function TodoItem({item, pressHandler}) {
+export default function TodoItem({item, deleteHandler}) {
     return(
-    <TouchableOpacity onPress={() => pressHandler(item.id)}>
+    <TouchableOpacity >
         <Text style={styles.item}>{item.task}</Text>
+        <Button
+            onPress={() => deleteHandler(item.id)} 
+            title='add todo' 
+            color='coral'
+        />
     </TouchableOpacity>
     )
 }

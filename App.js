@@ -8,15 +8,17 @@ export default function App() {
   const [todos, setTodos] = useState([
     {id: '1', task: 'Do HW'},
     {id: '2', task: 'Cooking'},
-    {id: '3', task: 'Eating'},
-    {id: '4', task: 'Do HW'},
-    {id: '5', task: 'Cooking'},
-    {id: '6', task: 'Eating'}
+    {id: '3', task: 'Eating'}
   ]);
 
-  const pressHandler = (id) => {
-    setTodos((prevTodos)=> {
-      return prevTodos.filter( todo => todo.id != id);
+  // const pressHandler = (id) => {
+  //   setTodos((prevTodos)=> {
+  //     return prevTodos.filter( todo => todo.id != id);
+  //   })
+  // }
+  const deleteHandler = (id) =>{
+    setTodos((prevTodos) => {
+      return prevTodos.filter( todo => todo.id != id)
     })
   }
 
@@ -38,7 +40,7 @@ export default function App() {
           <FlatList 
             data={todos}
             renderItem={({item}) => (
-              <TodoItem item={item} pressHandler={pressHandler}/>
+              <TodoItem item={item} deleteHandler={deleteHandler}/>
             )}
           />
         </View>
