@@ -23,12 +23,14 @@ export default function App() {
   }
 
   const submitHandler = (task) => {
+    if(task.length > 3){
     setTodos((prevTodos) => {
       return[
         { task: task, id: Math.random().toString()},
         ...prevTodos, 
       ]
     });
+  }
   }
 
   return (
