@@ -4,7 +4,9 @@ import Header from './components/header';
 import TodoItem from './components/todoItem';
 import AddTodo from './components/addTodo';
 
+
 export default function App() {
+  
   const [todos, setTodos] = useState([
     {id: '1', task: 'Do HW'},
     {id: '2', task: 'Cooking'},
